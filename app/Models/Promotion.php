@@ -24,10 +24,14 @@ class Promotion extends Model
     {
         static::updating(function ($promo) {
             if ($promo->isDirty('image')) {
-                // Hapus gambar lama dari storage
-                Storage::disk('public')->delete($promo->getOriginal('image'));
+                $oldImage = $promo->getOriginal('image');
+
+                if ($oldImage) {
+                    Storage::disk('public')->delete($oldImage);
+                }
             }
         });
+
         static::deleting(function ($promo) {
             if ($promo->image) {
                 Storage::disk('public')->delete($promo->image);

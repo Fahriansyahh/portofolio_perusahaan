@@ -29,8 +29,10 @@ class Testimonial extends Model
     protected static function booted()
     {
         static::updating(function ($testimonial) {
-            if ($testimonial->isDirty('photo')) {
-                Storage::disk('public')->delete($testimonial->getOriginal('photo'));
+            $oldPhoto = $testimonial->getOriginal('photo');
+
+            if ($testimonial->isDirty('photo') && $oldPhoto) {
+                Storage::disk('public')->delete($oldPhoto);
             }
         });
 

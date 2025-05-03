@@ -40,7 +40,7 @@ class ServiceResource extends Resource
                 FileUpload::make('image')
                     ->disk('public')          // simpan di storage/app/public
                     ->directory('services')   // simpan di storage/app/public/services
-                    ->visibility('public')->required(),
+                    ->visibility('public')->imageEditor()->required(),
 
                 // Repeater untuk memilih Promo
                 Repeater::make('promotionServices')->afterStateHydrated(function (Forms\Components\Repeater $component, $state) {

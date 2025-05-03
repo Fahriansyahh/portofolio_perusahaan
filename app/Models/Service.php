@@ -24,6 +24,21 @@ class Service extends Model
             // Hapus relasi di pivot table
             $service->promotions()->detach(); // Ini akan hapus entri di promotion_services
         });
+        static::updating(function ($promo) {
+            if ($promo->isDirty('image')) {
+                $oldImage = $promo->getOriginal('image');
+
+                if ($oldImage) {
+                    Storage::disk('public')->delete($oldImage);
+                }
+            }
+        });
+
+        static::deleting(function ($promo) {
+            if ($promo->image) {
+                Storage::disk('public')->delete($promo->image);
+            }
+        });
     }
 
     public function promotions()
