@@ -1,6 +1,38 @@
-# Nama Proyek
+## 🏢 Profil Instansi: PT Inovasoft
+
+**Inovasoft** adalah perusahaan **Cloud Solution Provider** yang menyediakan solusi bisnis berbasis cloud untuk korporasi. Fokus layanan kami mencakup:
+
+- 💼 **Aplikasi bisnis siap pakai**, seperti:
+  - CRM (Customer Relationship Management)
+  - Employee Self Services
+  - Document Management System
+- 🧩 **Pengembangan aplikasi custom** berbasis *low-code/no-code* menggunakan **Microsoft Power Platform**
+- 📊 **Layanan pendukung** untuk kebutuhan:
+  - Business Intelligence (BI)
+  - Data Warehouse (DW)
+
+---
+
+## 📌 Tentang Proyek
 
 Proyek ini dibangun menggunakan Laravel 11 dan pendekatan **Agile Development**. Sistem memiliki tampilan untuk **User** dan **Admin**, serta dilengkapi dengan dokumentasi teknis seperti **Use Case Diagram**, **Sequence Diagram**, dan **ERD (Entity Relationship Diagram)**.
+
+---
+
+## ⚙️ Instalasi & Setup
+
+```bash
+git clone https://github.com/Fahriansyahh/portofolio_perusahaan.git
+cd PORTFOLIO
+composer install
+cp .env.example .env
+php artisan key:generate
+
+# Setup Database
+php artisan migrate 
+
+# Jalankan server
+php artisan serve
 
 ---
 
@@ -39,8 +71,6 @@ Proyek dikembangkan dengan metode **Agile**, menggunakan pendekatan iteratif dan
 ![Contact](public/images/contact.png)  
 ![Home 1](public/images/home1.png)  
 ![Home 2](public/images/home2.png)  
-![About 3](public/images/abou3.png)  
-![About 4](public/images/about4.png)  
 ![Service](public/images/service.png)  
 ![Service 1](public/images/service1.png)
 
@@ -85,19 +115,4 @@ Proyek dikembangkan dengan metode **Agile**, menggunakan pendekatan iteratif dan
 
 ![Use Case](public/images/usecase1.png)
 
----
 
-## ⚙️ Instalasi & Setup
-
-```bash
-git clone https://github.com/namauser/namaproject.git
-cd namaproject
-composer install
-cp .env.example .env
-php artisan key:generate
-
-# Setup Database
-php artisan migrate --seed
-
-# Jalankan server
-php artisan serve
