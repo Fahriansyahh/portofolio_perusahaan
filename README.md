@@ -29,10 +29,11 @@ cp .env.example .env
 php artisan key:generate
 
 # Setup Database
-php artisan migrate 
+php artisan migrate
 
 # Jalankan server
 php artisan serve
+```
 
 ---
 
