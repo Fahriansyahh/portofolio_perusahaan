@@ -1,5 +1,96 @@
 <x-layout :title="$title">
 
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                Contacts
+            </h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+                Ada pertanyaan? Silakan kirimkan pesan Anda kepada kami.
+            </p>
+
+            @if (session('success'))
+                <div class="mb-6 text-green-700 bg-green-100 p-4 rounded-lg">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            <form action="{{ route('contacts.submit') }}" method="POST" class="space-y-8">
+                @csrf
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- First Name -->
+                    <div>
+                        <label for="first_name"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama Depan</label>
+                        <input type="text" id="first_name" name="first_name"
+                            class="shadow-sm bg-gray-50 border @error('first_name') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                            placeholder="Nama depan Anda" value="{{ old('first_name') }}" required>
+                        @error('first_name')
+                            <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Last Name -->
+                    <div>
+                        <label for="last_name"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama
+                            Belakang</label>
+                        <input type="text" id="last_name" name="last_name"
+                            class="shadow-sm bg-gray-50 border @error('last_name') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                            placeholder="Nama belakang Anda" value="{{ old('last_name') }}" required>
+                        @error('last_name')
+                            <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label for="phone"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nomor HP</label>
+                        <input type="tel" id="phone" name="phone"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            class="shadow-sm bg-gray-50 border @error('phone') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                            placeholder="08xxxxxxxxxx" value="{{ old('phone') }}" required>
+                        @error('phone')
+                            <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="shadow-sm bg-gray-50 border @error('email') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                            placeholder="anda@email.com" value="{{ old('email') }}" required>
+                        @error('email')
+                            <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pesan
+                        (Opsional)</label>
+                    <textarea id="message" name="message" rows="5"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border @error('message') border-red-500 @else border-gray-300 @enderror rounded-lg"
+                        placeholder="Tulis pesan Anda di sini...">{{ old('message') }}</textarea>
+                    @error('message')
+                        <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit"
+                    class="flex items-center gap-2 py-3 px-5 text-sm font-medium text-white rounded-lg bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </section>
+
+
     <div class="flex items-center justify-center  mb-4 rounded-sm ">
         <section class="bg-white dark:bg-gray-900 py-12 px-4">
             <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

@@ -19,7 +19,8 @@ class PromotionServiceResource extends Resource
 {
     protected static ?string $model = Promotion_service::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-megaphone';
+    protected static ?string $navigationGroup = 'Service';
 
     public static function form(Form $form): Form
     {

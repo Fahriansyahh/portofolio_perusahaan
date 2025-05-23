@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Contact;
 use App\Models\Service;
-use App\Models\Testimonial;
 use App\Models\Promotion;
+use App\Models\Testimonial;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,6 +23,20 @@ Route::get('/', function () {
 Route::get('/contacts', function () {
     return view('contact', ["title" => "Contacts"]);
 });
+
+Route::post('/contacts', function (Request $request) {
+    $validated = $request->validate([
+        'first_name' => 'required|string|max:255',
+        'last_name'  => 'required|string|max:255',
+        'phone' => ['required', 'regex:/^[0-9]+$/', 'max:20'],
+        'email'      => 'required|email|max:255',
+        'message'    => 'nullable|string',
+    ]);
+
+    Contact::create($validated);
+
+    return back()->with('success', 'Pesan berhasil dikirim.');
+})->name('contacts.submit');
 
 Route::get('/visi', function () {
     return view('visi', ["title" => "Visi"]);
