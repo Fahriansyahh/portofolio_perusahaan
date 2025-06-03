@@ -12,7 +12,7 @@ Route::get('/', function () {
     $services = Service::with('promotions')->paginate(6);
     $testimonial = Testimonial::latest()->take(3)->get();
     return view('welcome', [
-        "title" => "Home",
+        "title" => "Rumah",
         "promotion" => $promotions,
         "services" => $services,
         "testimonial" => $testimonial
@@ -23,6 +23,11 @@ Route::get('/', function () {
 Route::get('/contacts', function () {
     return view('contact', ["title" => "Contacts"]);
 });
+Route::get('/products', function () {
+    $services = Service::with('promotions')->paginate(6);
+    return view('products', ["title" => "Produk",  "services" => $services]);
+});
+
 
 Route::post('/contacts', function (Request $request) {
     $validated = $request->validate([
@@ -43,7 +48,7 @@ Route::get('/visi', function () {
 });
 
 Route::get('/about', function () {
-    return view('about', ["title" => "about"]);
+    return view('about', ["title" => "Tentang Kami"]);
 });
 
 Route::get('/service', function () {

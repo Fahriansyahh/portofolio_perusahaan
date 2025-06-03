@@ -19,7 +19,7 @@
 
     <x-navbar :title="$title"></x-navbar>
 
-    <main class="mx-5">
+    <main>
         {{ $slot }}
     </main>
 

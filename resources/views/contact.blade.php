@@ -2,10 +2,10 @@
 
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-blue-900 dark:text-white">
                 Contacts
             </h2>
-            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+            <p class="mb-8 lg:mb-16 font-light text-center text-blue-900 dark:text-gray-400 sm:text-xl">
                 Ada pertanyaan? Silakan kirimkan pesan Anda kepada kami.
             </p>
 
@@ -33,7 +33,7 @@
                     <!-- Last Name -->
                     <div>
                         <label for="last_name"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama
+                            class="block mb-2 text-sm font-medium text-blue-900 dark:text-gray-300">Nama
                             Belakang</label>
                         <input type="text" id="last_name" name="last_name"
                             class="shadow-sm bg-gray-50 border @error('last_name') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
@@ -46,7 +46,7 @@
                     <!-- Phone -->
                     <div>
                         <label for="phone"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nomor HP</label>
+                            class="block mb-2 text-sm font-medium text-blue-900 dark:text-gray-300">Nomor HP</label>
                         <input type="tel" id="phone" name="phone"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                             class="shadow-sm bg-gray-50 border @error('phone') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
@@ -59,7 +59,7 @@
                     <!-- Email -->
                     <div>
                         <label for="email"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                            class="block mb-2 text-sm font-medium text-blue-900 dark:text-gray-300">Email</label>
                         <input type="email" id="email" name="email"
                             class="shadow-sm bg-gray-50 border @error('email') border-red-500 @else border-gray-300 @enderror text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="anda@email.com" value="{{ old('email') }}" required>
@@ -71,7 +71,7 @@
 
                 <!-- Message -->
                 <div>
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pesan
+                    <label for="message" class="block mb-2 text-sm font-medium text-blue-900 dark:text-gray-300">Pesan
                         (Opsional)</label>
                     <textarea id="message" name="message" rows="5"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border @error('message') border-red-500 @else border-gray-300 @enderror rounded-lg"
@@ -96,8 +96,8 @@
             <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Informasi Kontak -->
                 <div>
-                    <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Hubungi Kami</h2>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    <h2 class="text-3xl font-bold mb-4 text-blue-900 dark:text-white">Hubungi Kami</h2>
+                    <p class="text-blue-900 dark:text-gray-300 mb-6">
                         Silakan hubungi kami melalui kontak berikut:
                     </p>
                     <ul class="space-y-4 text-gray-700 dark:text-gray-300">
