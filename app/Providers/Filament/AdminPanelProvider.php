@@ -29,7 +29,9 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'primary' => Color::Amber,
-            ])->brandName('PT Inovasoft')
+            ])
+            ->brandName('PT Inovasoft')
+            ->favicon(asset('images/logo2.png')) // Icon di tab browser
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

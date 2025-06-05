@@ -31,7 +31,7 @@ class PromotionServiceResource extends Resource
                     ->options(Service::all()->pluck('title', 'id'))
                     ->live()->required(),
                 Select::make('promotion_id')
-                    ->label('Service')
+                    ->label('Promotion')
                     ->options(Promotion::all()->pluck('title', 'id'))
                     ->live()->required(),
             ]);
