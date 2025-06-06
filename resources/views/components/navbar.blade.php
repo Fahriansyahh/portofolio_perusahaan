@@ -25,7 +25,7 @@
                             '/'),
                         'text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' => !request()->is(
                             '/'),
-                    ])>Rumah</a>
+                    ])>Beranda</a>
 
 
                 </li>
@@ -74,7 +74,7 @@
                             'service'),
                         'text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' => !request()->is(
                             'service'),
-                    ])>Service</a>
+                    ])>Layanan</a>
                 </li>
                 <li>
                     <a href="/contacts" @class([
@@ -83,7 +83,7 @@
                             'contacts'),
                         'text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' => !request()->is(
                             'contacts'),
-                    ])>Contacts</a>
+                    ])>Hubungi Kami</a>
                 </li>
             </ul>
         </div>
